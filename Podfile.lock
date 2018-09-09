@@ -1,0 +1,30 @@
+PODS:
+  - Hero (1.3.0)
+  - Realm (3.7.6):
+    - Realm/Headers (= 3.7.6)
+  - Realm/Headers (3.7.6)
+  - RealmSwift (3.7.6):
+    - Realm (= 3.7.6)
+  - SnapKit (4.0.0)
+
+DEPENDENCIES:
+  - Hero
+  - RealmSwift
+  - SnapKit
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Hero
+    - Realm
+    - RealmSwift
+    - SnapKit
+
+SPEC CHECKSUMS:
+  Hero: 3eecd3fd62dd2425cbc7e35505c557b86d5a379e
+  Realm: 9eaecad54712d6246d08ba34c10f354e4715d7d3
+  RealmSwift: 1fe08b4ebaeeaacf17f9ba0343f7b25c9fc31fa6
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+
+PODFILE CHECKSUM: 358d1c24cefc36814d6e9862594eb45563b459a2
+
+COCOAPODS: 1.5.3
