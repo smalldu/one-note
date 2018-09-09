@@ -5,4 +5,5 @@ target 'one-note' do
   pod 'RealmSwift'
   pod 'Hero'
   pod 'SnapKit'
+  pod 'EasyAtrribute'
 end

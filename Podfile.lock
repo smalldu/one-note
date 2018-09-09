@@ -1,4 +1,5 @@
 PODS:
+  - EasyAtrribute (0.0.3)
   - Hero (1.3.0)
   - Realm (3.7.6):
     - Realm/Headers (= 3.7.6)
@@ -8,23 +9,26 @@ PODS:
   - SnapKit (4.0.0)
 
 DEPENDENCIES:
+  - EasyAtrribute
   - Hero
   - RealmSwift
   - SnapKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - EasyAtrribute
     - Hero
     - Realm
     - RealmSwift
     - SnapKit
 
 SPEC CHECKSUMS:
+  EasyAtrribute: e9ad8ce91024c5341a4e9b3e6cee802189190ec8
   Hero: 3eecd3fd62dd2425cbc7e35505c557b86d5a379e
   Realm: 9eaecad54712d6246d08ba34c10f354e4715d7d3
   RealmSwift: 1fe08b4ebaeeaacf17f9ba0343f7b25c9fc31fa6
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: 358d1c24cefc36814d6e9862594eb45563b459a2
+PODFILE CHECKSUM: 37a042ec569aa13a57579e4e1211dc254809baa7
 
 COCOAPODS: 1.5.3

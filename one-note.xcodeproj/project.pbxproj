@@ -42,6 +42,10 @@
 		26D273CC2145310100F92DC4 /* TableHoderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D273CA2145310100F92DC4 /* TableHoderView.swift */; };
 		26D273CF2145357100F92DC4 /* AddNoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D273CD2145357100F92DC4 /* AddNoteController.swift */; };
 		26D273D02145357100F92DC4 /* AddNoteController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26D273CE2145357100F92DC4 /* AddNoteController.xib */; };
+		26D273F12145645700F92DC4 /* RichEditorToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D273F02145645700F92DC4 /* RichEditorToolView.swift */; };
+		26D273F321456D0500F92DC4 /* NSAttributeString+exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D273F221456D0500F92DC4 /* NSAttributeString+exts.swift */; };
+		26D273F521456D8000F92DC4 /* Data+exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D273F421456D8000F92DC4 /* Data+exts.swift */; };
+		26D273F72145726A00F92DC4 /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D273F62145726A00F92DC4 /* Tool.swift */; };
 		A935C7D688326071E34C9623 /* Pods_one_note.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70130C3694D335D528DC8A05 /* Pods_one_note.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +88,10 @@
 		26D273CA2145310100F92DC4 /* TableHoderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableHoderView.swift; sourceTree = "<group>"; };
 		26D273CD2145357100F92DC4 /* AddNoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteController.swift; sourceTree = "<group>"; };
 		26D273CE2145357100F92DC4 /* AddNoteController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNoteController.xib; sourceTree = "<group>"; };
+		26D273F02145645700F92DC4 /* RichEditorToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichEditorToolView.swift; sourceTree = "<group>"; };
+		26D273F221456D0500F92DC4 /* NSAttributeString+exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributeString+exts.swift"; sourceTree = "<group>"; };
+		26D273F421456D8000F92DC4 /* Data+exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+exts.swift"; sourceTree = "<group>"; };
+		26D273F62145726A00F92DC4 /* Tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
 		6900435D30B8717E0039E225 /* Pods-one-note.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-one-note.release.xcconfig"; path = "Pods/Target Support Files/Pods-one-note/Pods-one-note.release.xcconfig"; sourceTree = "<group>"; };
 		70130C3694D335D528DC8A05 /* Pods_one_note.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_one_note.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -121,6 +129,7 @@
 		26D273782144D13400F92DC4 /* one-note */ = {
 			isa = PBXGroup;
 			children = (
+				26D273EF2145642200F92DC4 /* Tools */,
 				26D273992144EA5200F92DC4 /* ViewModels */,
 				26D273962144E51000F92DC4 /* Exts */,
 				26D2738F2144D17300F92DC4 /* Supporting Files */,
@@ -201,6 +210,8 @@
 				26D273B82145185B00F92DC4 /* UITextField+exts.swift */,
 				26D273BC21451E4100F92DC4 /* String+exts.swift */,
 				26D273BE214521FD00F92DC4 /* Date+exts.swift */,
+				26D273F221456D0500F92DC4 /* NSAttributeString+exts.swift */,
+				26D273F421456D8000F92DC4 /* Data+exts.swift */,
 			);
 			path = Exts;
 			sourceTree = "<group>";
@@ -223,6 +234,15 @@
 				26D273CA2145310100F92DC4 /* TableHoderView.swift */,
 			);
 			path = EmptyTable;
+			sourceTree = "<group>";
+		};
+		26D273EF2145642200F92DC4 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				26D273F02145645700F92DC4 /* RichEditorToolView.swift */,
+				26D273F62145726A00F92DC4 /* Tool.swift */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 		3A8E3D6563148E8DD0D2B1CE /* Pods */ = {
@@ -338,6 +358,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-one-note/Pods-one-note-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/EasyAtrribute/EasyAtrribute.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
@@ -345,6 +366,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EasyAtrribute.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
@@ -378,8 +400,11 @@
 				26D273BB21451CFC00F92DC4 /* NoteBookAddViewModel.swift in Sources */,
 				26D273B12145091500F92DC4 /* UITableView+exts.swift in Sources */,
 				26D273CB2145310100F92DC4 /* TableView+Empty.swift in Sources */,
+				26D273F72145726A00F92DC4 /* Tool.swift in Sources */,
 				26D2739D2144EC9C00F92DC4 /* UIColor+exts.swift in Sources */,
 				26D273A52144F3EC00F92DC4 /* UIButton+exts.swift in Sources */,
+				26D273F321456D0500F92DC4 /* NSAttributeString+exts.swift in Sources */,
+				26D273F521456D8000F92DC4 /* Data+exts.swift in Sources */,
 				26D273982144E92900F92DC4 /* SettingController.swift in Sources */,
 				26D2737C2144D13400F92DC4 /* NoteBookListController.swift in Sources */,
 				26D273C2214523CB00F92DC4 /* NoteBookController.swift in Sources */,
@@ -390,6 +415,7 @@
 				26D273932144E10400F92DC4 /* Note.swift in Sources */,
 				26D273A32144F0F400F92DC4 /* NoteBookListViewModel.swift in Sources */,
 				26D2739F2144ED1600F92DC4 /* UIFont+exts.swift in Sources */,
+				26D273F12145645700F92DC4 /* RichEditorToolView.swift in Sources */,
 				26D273AB2145053B00F92DC4 /* RealmProvider.swift in Sources */,
 				26D273B321450A0800F92DC4 /* UICollectionView+exts.swift in Sources */,
 			);

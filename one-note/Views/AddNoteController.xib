@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddNoteController" customModule="one_note" customModuleProvider="target">
             <connections>
                 <outlet property="closeButton" destination="5hj-6M-7oT" id="7Lo-Gw-eMP"/>
+                <outlet property="textView" destination="b8r-Ns-jcq" id="hVk-4w-cSP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -27,11 +28,21 @@
                         <action selector="close:" destination="-1" eventType="touchUpInside" id="r83-8F-tJy"/>
                     </connections>
                 </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="qingshuru " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="b8r-Ns-jcq">
+                    <rect key="frame" x="15" y="80" width="345" height="577"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="b8r-Ns-jcq" secondAttribute="bottom" constant="10" id="4EJ-l7-6KB"/>
+                <constraint firstItem="b8r-Ns-jcq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="Ba0-Di-eY3"/>
                 <constraint firstItem="5hj-6M-7oT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="aVj-UW-FDC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5hj-6M-7oT" secondAttribute="trailing" constant="20" id="bsk-aZ-hch"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="b8r-Ns-jcq" secondAttribute="trailing" constant="15" id="cBO-PA-9Se"/>
+                <constraint firstItem="b8r-Ns-jcq" firstAttribute="top" secondItem="5hj-6M-7oT" secondAttribute="bottom" constant="5" id="jnq-9c-UWA"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="24.5" y="51.5"/>

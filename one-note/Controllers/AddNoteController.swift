@@ -11,7 +11,7 @@ import UIKit
 class AddNoteController: UIViewController {
   
   @IBOutlet weak var closeButton: UIButton!
-  
+  @IBOutlet weak var textView: UITextView!
   
   init() {
     super.init(nibName: "AddNoteController", bundle: nil)
@@ -26,6 +26,19 @@ class AddNoteController: UIViewController {
     setup()
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    self.textView.becomeFirstResponder()
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    self.textView.resignFirstResponder()
+  }
+  
+  deinit {
+    NotificationCenter.default.removeObserver(self)
+  }
 }
 
 
@@ -39,8 +52,27 @@ extension AddNoteController {
     closeButton.hero.id = HeroID.close
     hero.isEnabled = true
     
+    textView.configRichToolBar()
+    
+    NotificationCenter.default.addObserver(self, selector: #selector(updateTextLayout(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(updateTextLayout(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
   }
   
+  
+  // 自适应 contentInset
+  @objc func updateTextLayout(_ notification:Notification){
+    guard let rect = ((notification as NSNotification).userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+    guard rect.height > 0 else { return }
+    let rectInView = self.view.convert(rect, from: view.window)
+    
+    if notification.name == .UIKeyboardWillHide {
+      textView.contentInset = .zero
+    }else{
+      textView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: rectInView.height-10, right: 0)
+    }
+    textView.scrollIndicatorInsets = textView.contentInset
+    textView.scrollRangeToVisible(textView.selectedRange)
+  }
 }
 
 // MARK: - operaters

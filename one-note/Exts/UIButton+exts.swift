@@ -52,6 +52,34 @@ extension UIButton{
     self.titleLabel?.font = style.font
   }
   
+  var normal_title:String?{
+    set(v){
+      self.setTitle(v,for: UIControlState.normal)
+    }
+    get{
+      return self.titleLabel?.text
+    }
+  }
+  
+  var normal_image:UIImage?{
+    set(v){
+      self.setImage(v, for: UIControlState.normal)
+    }
+    get{
+      return self.imageView?.image
+    }
+  }
+  
+  var normal_color:UIColor?{
+    set(v){
+      self.setTitleColor(v, for: UIControlState.normal )
+    }
+    get{
+      return self.titleLabel?.textColor
+    }
+  }
+  
+  
 }
 
 
