@@ -55,10 +55,10 @@ public extension UITableView {
       hoderView.frame.origin.y = 0
       hoderView.backgroundColor = self.backgroundColor
       self.backgroundView = hoderView
-      self.separatorStyle = .none
+//      self.separatorStyle = .none
     }else{
       self.backgroundView = nil
-      self.separatorStyle = .singleLine
+//      self.separatorStyle = .singleLine
     }
   }
 }

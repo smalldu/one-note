@@ -22,4 +22,6 @@ extension UIColor {
   static let body = UIColor(rgb: 0x484848)
   static let remind = UIColor(rgb: 0xb2b2b2)
   static let secondary = UIColor(rgb: 0x888888)
+  static let line = UIColor(rgb: 0xeeeeee)
+  static let lightBlue = UIColor(rgb: 0x06beb6)
 }

@@ -109,7 +109,8 @@ extension AddNoteController: RichEditorToolViewDelegate {
     }
     let content = self.textView.attributedText.string
     let attributeDate = self.textView.attributedText.toArchiveData()
-    self.viewModel.save(content, attributeContent: attributeDate)
+    let image = self.textView.attributedText.getCoverData()
+    self.viewModel.save(content, attributeContent: attributeDate,image: image)
     
     self.dismiss(animated: true, completion: nil)
   }

@@ -46,6 +46,10 @@
 		26D273F321456D0500F92DC4 /* NSAttributeString+exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D273F221456D0500F92DC4 /* NSAttributeString+exts.swift */; };
 		26D273F521456D8000F92DC4 /* Data+exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D273F421456D8000F92DC4 /* Data+exts.swift */; };
 		26D273F72145726A00F92DC4 /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D273F62145726A00F92DC4 /* Tool.swift */; };
+		26D273FA214695AD00F92DC4 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D273F8214695AD00F92DC4 /* NoteCell.swift */; };
+		26D273FB214695AD00F92DC4 /* NoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26D273F9214695AD00F92DC4 /* NoteCell.xib */; };
+		26D274002146AC9700F92DC4 /* NoteDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D273FE2146AC9700F92DC4 /* NoteDetailController.swift */; };
+		26D274012146AC9700F92DC4 /* NoteDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26D273FF2146AC9700F92DC4 /* NoteDetailController.xib */; };
 		81F8E1B021462E1A002D5C4D /* RichTextFormatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8E1AF21462E1A002D5C4D /* RichTextFormatView.swift */; };
 		81F8E1B221462ED9002D5C4D /* UISCreen+exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8E1B121462ED9002D5C4D /* UISCreen+exts.swift */; };
 		81F8E1B5214645DC002D5C4D /* CheckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8E1B4214645DC002D5C4D /* CheckButton.swift */; };
@@ -102,6 +106,10 @@
 		26D273F221456D0500F92DC4 /* NSAttributeString+exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributeString+exts.swift"; sourceTree = "<group>"; };
 		26D273F421456D8000F92DC4 /* Data+exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+exts.swift"; sourceTree = "<group>"; };
 		26D273F62145726A00F92DC4 /* Tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
+		26D273F8214695AD00F92DC4 /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
+		26D273F9214695AD00F92DC4 /* NoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteCell.xib; sourceTree = "<group>"; };
+		26D273FE2146AC9700F92DC4 /* NoteDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailController.swift; sourceTree = "<group>"; };
+		26D273FF2146AC9700F92DC4 /* NoteDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteDetailController.xib; sourceTree = "<group>"; };
 		6900435D30B8717E0039E225 /* Pods-one-note.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-one-note.release.xcconfig"; path = "Pods/Target Support Files/Pods-one-note/Pods-one-note.release.xcconfig"; sourceTree = "<group>"; };
 		70130C3694D335D528DC8A05 /* Pods_one_note.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_one_note.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81F8E1AF21462E1A002D5C4D /* RichTextFormatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichTextFormatView.swift; sourceTree = "<group>"; };
@@ -183,10 +191,13 @@
 		26D2738D2144D16600F92DC4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				26D273FF2146AC9700F92DC4 /* NoteDetailController.xib */,
 				26D273CE2145357100F92DC4 /* AddNoteController.xib */,
 				26D273C1214523CB00F92DC4 /* NoteBookController.xib */,
 				26D2737D2144D13400F92DC4 /* Main.storyboard */,
 				26D273A62144F9B900F92DC4 /* NoteBookListCell.swift */,
+				26D273F8214695AD00F92DC4 /* NoteCell.swift */,
+				26D273F9214695AD00F92DC4 /* NoteCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,6 +210,7 @@
 				26D273C0214523CB00F92DC4 /* NoteBookController.swift */,
 				26D273972144E92900F92DC4 /* SettingController.swift */,
 				26D273CD2145357100F92DC4 /* AddNoteController.swift */,
+				26D273FE2146AC9700F92DC4 /* NoteDetailController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -360,11 +372,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26D273FB214695AD00F92DC4 /* NoteCell.xib in Resources */,
 				26D273C3214523CB00F92DC4 /* NoteBookController.xib in Resources */,
 				26D273842144D13500F92DC4 /* LaunchScreen.storyboard in Resources */,
 				26D273D02145357100F92DC4 /* AddNoteController.xib in Resources */,
 				26D273812144D13500F92DC4 /* Assets.xcassets in Resources */,
 				26D2737F2144D13400F92DC4 /* Main.storyboard in Resources */,
+				26D274012146AC9700F92DC4 /* NoteDetailController.xib in Resources */,
 				81F8E1BB21464B6D002D5C4D /* FormatCheckCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,7 +410,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-one-note/Pods-one-note-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-one-note/Pods-one-note-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/EasyAtrribute/EasyAtrribute.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/KMPlaceholderTextView/KMPlaceholderTextView.framework",
@@ -415,7 +429,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-one-note/Pods-one-note-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-one-note/Pods-one-note-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -435,6 +449,7 @@
 				26D273A72144F9B900F92DC4 /* NoteBookListCell.swift in Sources */,
 				26D273B52145108600F92DC4 /* HeroID.swift in Sources */,
 				26D273A12144EF2A00F92DC4 /* UILabel.swift in Sources */,
+				26D274002146AC9700F92DC4 /* NoteDetailController.swift in Sources */,
 				26D273B92145185B00F92DC4 /* UITextField+exts.swift in Sources */,
 				26D273AD2145057D00F92DC4 /* Path.swift in Sources */,
 				26D273CF2145357100F92DC4 /* AddNoteController.swift in Sources */,
@@ -460,6 +475,7 @@
 				26D273932144E10400F92DC4 /* Note.swift in Sources */,
 				26D273A32144F0F400F92DC4 /* NoteBookListViewModel.swift in Sources */,
 				26D2739F2144ED1600F92DC4 /* UIFont+exts.swift in Sources */,
+				26D273FA214695AD00F92DC4 /* NoteCell.swift in Sources */,
 				81F8E1B221462ED9002D5C4D /* UISCreen+exts.swift in Sources */,
 				81F8E1B021462E1A002D5C4D /* RichTextFormatView.swift in Sources */,
 				26D273F12145645700F92DC4 /* RichEditorToolView.swift in Sources */,

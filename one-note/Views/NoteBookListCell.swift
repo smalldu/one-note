@@ -25,10 +25,7 @@ class NoteBookListCell: UICollectionViewCell {
   }
   
   func setup() {
-    ctView.corner(2)
-    ctView.layer.shadowOpacity = 0.1
-    ctView.layer.shadowRadius = 2
-    ctView.layer.shadowOffset = CGSize(width: 0, height: 2)
+    ctView.littleShadow()
     nameLabel.style(.cellTitle("每日一记"))
     recordLabel.style(.regular("988 条记录"))
     timeLabel.style(.time("16/08/1028"))

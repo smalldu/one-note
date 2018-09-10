@@ -14,14 +14,16 @@ import RealmSwift
   dynamic var id: String = UUID().uuidString
   dynamic var content: String = ""
   dynamic var attributeContent: Data?
-  dynamic var createTime: String = ""
-  dynamic var updateTime: String = ""
+  dynamic var coverImage: Data?
+  dynamic var createTime: Date?
+  dynamic var updateTime: Date?
   
-  convenience init(_ content: String, attributeContent: Data?) {
+  convenience init(_ content: String, attributeContent: Data?,image: Data?) {
     self.init()
     self.content = content
     self.attributeContent = attributeContent
-    self.createTime = Date().toString(format: "yyyy-MM-dd HH:mm:ss")
+    self.coverImage = image
+    self.createTime = Date()
     self.updateTime = self.createTime
   }
   

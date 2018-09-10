@@ -18,8 +18,8 @@ struct AddNoteViewModel {
     self._bookName = name
   }
   
-  func save(_ content: String,attributeContent: Data?){
-    _model.saveNote(_bookName,content, attributeContent: attributeContent)
+  func save(_ content: String,attributeContent: Data?,image: Data?){
+    _model.saveNote(_bookName,content, attributeContent: attributeContent,image: image)
   }
   
   

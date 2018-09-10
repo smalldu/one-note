@@ -14,5 +14,23 @@ extension NSAttributedString {
     return NSKeyedArchiver.archivedData(withRootObject: self)
   }
   
+  // 获取第一个image
+  func getCoverData() -> Data? {
+    let fullRange = NSRange(location: 0, length: self.length)
+    var image: UIImage?
+    self.enumerateAttribute(NSAttributedStringKey.attachment, in: fullRange, options: []) { (value, _, _) in
+      guard let attachment = value as? NSTextAttachment else { return }
+      if let img = attachment.image{
+        image =  img
+        return
+      }
+    }
+    if let image = image {
+      return UIImageJPEGRepresentation(image, 0.9)
+    }else{
+      return nil
+    }
+  }
+  
 }
 

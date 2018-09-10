@@ -28,6 +28,12 @@ public extension String {
     }
   }
   
+  public func toDate(format: String = "dd/MM/yy" ) -> Date? {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = format
+    return dateFormatter.date(from: self)
+  }
+  
 }
 
 /** array of bytes, little-endian representation */

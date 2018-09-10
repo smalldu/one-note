@@ -50,6 +50,9 @@ extension NoteBookController{
     addButton.hero.modifiers = [ .translate(x: 0, y: 80, z: 0) ]
     hero.isEnabled = true
     tableView.basicsConfig()
+    tableView.separatorStyle = .none
+    tableView.rowHeight = 120
+    tableView.easyRegisterNib(NoteCell.self)
     tableView.delegate = self
     tableView.dataSource = self
     viewModel.retriveBook()
@@ -80,8 +83,10 @@ extension NoteBookController{
 extension NoteBookController: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.easyDequeueReusableCell(forIndexPath: indexPath) as NoteCell
     let note = self.viewModel.notes[indexPath.row]
-    return UITableViewCell()
+    cell.configWith(note)
+    return cell
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
