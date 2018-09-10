@@ -21,6 +21,8 @@ class NoteCell: UITableViewCell {
   override func awakeFromNib() {
     super.awakeFromNib()
     selectionStyle = .none
+    coverImageView.contentMode = .scaleAspectFill
+    coverImageView.clip()
     lineView.backgroundColor = UIColor.line
     ctView.backgroundColor = UIColor.white
     ctView.littleShadow()

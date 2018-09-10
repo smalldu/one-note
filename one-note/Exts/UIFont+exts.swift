@@ -34,6 +34,14 @@ extension UIFont {
     }
   }
   
+  static func copperplate(_ size: CGFloat) -> UIFont{
+    if let font = UIFont(name: "Copperplate" , size: size){
+      return font
+    }else{
+      return UIFont.boldSystemFont(ofSize: size)
+    }
+  }
+  
 }
 
 

@@ -102,7 +102,9 @@ extension NoteBookController: UITableViewDataSource {
 extension NoteBookController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
+    let note = self.viewModel.notes[indexPath.row]
+    let controller = NoteDetailController()
+    self.present(controller, animated: true, completion: nil)
   }
   
 }

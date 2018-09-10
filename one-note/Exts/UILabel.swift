@@ -39,7 +39,7 @@ enum TextStyle: TextPresentable{
   var font: UIFont {
     switch self {
     case .title:
-      return .lightOf(25)
+      return UIFont.copperplate(25)
     case .regular:
       return UIFont.regularOf(14)
     case .cellTitle:
