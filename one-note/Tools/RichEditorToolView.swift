@@ -33,7 +33,6 @@ class RichEditorToolView: UIView {
         return #imageLiteral(resourceName: "keyboard")
       }
     }
-    
   }
   
   var type = Type.text
