@@ -24,7 +24,7 @@ struct RealmProvider {
   // MARK: - Note realm
   private static let notessConfig = Realm.Configuration(
     fileURL: try! Path.inLibrary("notes.realm"),
-    schemaVersion: 2,
+    schemaVersion: 3,
     deleteRealmIfMigrationNeeded: true)
   
   public static var notes: RealmProvider = {

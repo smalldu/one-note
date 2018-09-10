@@ -13,7 +13,17 @@ import RealmSwift
   
   dynamic var id: String = UUID().uuidString
   dynamic var content: String = ""
+  dynamic var attributeContent: Data?
   dynamic var createTime: String = ""
+  dynamic var updateTime: String = ""
+  
+  convenience init(_ content: String, attributeContent: Data?) {
+    self.init()
+    self.content = content
+    self.attributeContent = attributeContent
+    self.createTime = Date().toString(format: "yyyy-MM-dd HH:mm:ss")
+    self.updateTime = self.createTime
+  }
   
   override static func primaryKey() -> String? {
     return "id"

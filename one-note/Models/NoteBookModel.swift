@@ -30,6 +30,19 @@ class NoteBookModel {
     }
   }
   
+  // 实际是更新bookNote
+  func saveNote(_ bookName: String,_ content: String, attributeContent: Data?){
+    if let book = bookWith(bookName){
+      let realm = RealmProvider.notes.realm
+      let note = Note(content, attributeContent: attributeContent)
+      
+      try? realm?.write {
+        book.notes.append(note)
+      }
+    }
+  }
+  
+  
 }
 
 

@@ -6,4 +6,5 @@ target 'one-note' do
   pod 'Hero'
   pod 'SnapKit'
   pod 'EasyAtrribute'
+  pod 'KMPlaceholderTextView'
 end

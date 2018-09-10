@@ -23,7 +23,7 @@ struct NoteBookViewModel {
     self.name = name
   }
   
-  mutating func retriveBook(){
+  mutating func retriveBook() {
     _book = model.bookWith(self.name)
   }
   

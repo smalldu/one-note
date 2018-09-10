@@ -14,6 +14,8 @@ enum ButtonStyle: ButtonPresentable{
     switch self {
     case .add:
       return #imageLiteral(resourceName: "add").withRenderingMode(.alwaysOriginal)
+    case .addNote:
+      return #imageLiteral(resourceName: "add_note").withRenderingMode(.alwaysOriginal)
     default:
       return nil
     }
@@ -38,6 +40,7 @@ enum ButtonStyle: ButtonPresentable{
   
   case add
   case submit
+  case addNote
   
 }
 

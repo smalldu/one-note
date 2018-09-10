@@ -7,13 +7,19 @@
 //
 
 import UIKit
+import KMPlaceholderTextView
 
 class AddNoteController: UIViewController {
   
   @IBOutlet weak var closeButton: UIButton!
-  @IBOutlet weak var textView: UITextView!
+  @IBOutlet weak var textView: KMPlaceholderTextView!
+  var viewModel: AddNoteViewModel
+  var editorToolView: RichEditorToolView?
   
-  init() {
+  let name: String
+  init(name: String) {
+    self.name = name
+    viewModel = AddNoteViewModel(name)
     super.init(nibName: "AddNoteController", bundle: nil)
   }
   
@@ -51,8 +57,14 @@ extension AddNoteController {
     closeButton.transform = CGAffineTransform.identity.rotated(by: CGFloat(Double.pi/4))
     closeButton.hero.id = HeroID.close
     hero.isEnabled = true
+    textView.placeholder = viewModel.placehoder
+    textView.placeholderColor = UIColor.remind
+    textView.textColor = UIColor.body
+    textView.font = UIFont.regularOf(17)
+    editorToolView = textView.configRichToolBar(17)
+    editorToolView?.delegate = self
     
-    textView.configRichToolBar()
+    textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
     
     NotificationCenter.default.addObserver(self, selector: #selector(updateTextLayout(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(updateTextLayout(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
@@ -84,4 +96,44 @@ extension AddNoteController {
   }
   
 }
+
+
+
+// MARK: - RichEditorToolViewDelegate
+
+extension AddNoteController: RichEditorToolViewDelegate {
+  
+  func richEditorToolViewDidClickSave(_ view: RichEditorToolView) {
+    if self.textView.attributedText.string.isEmpty || self.textView.attributedText == nil{
+      return
+    }
+    let content = self.textView.attributedText.string
+    let attributeDate = self.textView.attributedText.toArchiveData()
+    self.viewModel.save(content, attributeContent: attributeDate)
+    
+    self.dismiss(animated: true, completion: nil)
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

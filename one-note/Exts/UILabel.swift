@@ -12,14 +12,16 @@ enum TextStyle: TextPresentable{
   
   var text: String {
     switch self {
-    case .title(let title):
-      return title
-    case .cellTitle(let title):
-      return title
-    case .regular(let title):
-      return title
-    case .time(let title):
-      return title
+    case .title(let text):
+      return text
+    case .cellTitle(let text):
+      return text
+    case .regular(let text):
+      return text
+    case .time(let text):
+      return text
+    case .cellName(let text):
+      return text
     }
   }
   
@@ -37,13 +39,15 @@ enum TextStyle: TextPresentable{
   var font: UIFont {
     switch self {
     case .title:
-      return .mediumOf(28)
+      return .lightOf(25)
     case .regular:
       return UIFont.regularOf(14)
     case .cellTitle:
       return UIFont.regularOf(18)
     case .time:
       return UIFont.lightOf(11)
+    case .cellName:
+      return UIFont.lightOf(15)
     }
   }
   
@@ -51,6 +55,7 @@ enum TextStyle: TextPresentable{
   case cellTitle(String)
   case regular(String)
   case time(String)
+  case cellName(String)
 }
 
 extension UILabel {

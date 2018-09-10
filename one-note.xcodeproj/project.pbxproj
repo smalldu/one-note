@@ -46,6 +46,16 @@
 		26D273F321456D0500F92DC4 /* NSAttributeString+exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D273F221456D0500F92DC4 /* NSAttributeString+exts.swift */; };
 		26D273F521456D8000F92DC4 /* Data+exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D273F421456D8000F92DC4 /* Data+exts.swift */; };
 		26D273F72145726A00F92DC4 /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D273F62145726A00F92DC4 /* Tool.swift */; };
+		81F8E1B021462E1A002D5C4D /* RichTextFormatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8E1AF21462E1A002D5C4D /* RichTextFormatView.swift */; };
+		81F8E1B221462ED9002D5C4D /* UISCreen+exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8E1B121462ED9002D5C4D /* UISCreen+exts.swift */; };
+		81F8E1B5214645DC002D5C4D /* CheckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8E1B4214645DC002D5C4D /* CheckButton.swift */; };
+		81F8E1B7214646BC002D5C4D /* CheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8E1B6214646BC002D5C4D /* CheckView.swift */; };
+		81F8E1BA21464B6D002D5C4D /* FormatCheckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8E1B821464B6D002D5C4D /* FormatCheckCell.swift */; };
+		81F8E1BB21464B6D002D5C4D /* FormatCheckCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81F8E1B921464B6D002D5C4D /* FormatCheckCell.xib */; };
+		81F8E1BD21465795002D5C4D /* AddNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8E1BC21465795002D5C4D /* AddNoteViewModel.swift */; };
+		81F8E1BF214669D9002D5C4D /* AuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8E1BE214669D9002D5C4D /* AuthorizationManager.swift */; };
+		81F8E1C121466A96002D5C4D /* PhotoChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8E1C021466A96002D5C4D /* PhotoChooser.swift */; };
+		81F8E1C321466FDE002D5C4D /* UIImage+exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8E1C221466FDE002D5C4D /* UIImage+exts.swift */; };
 		A935C7D688326071E34C9623 /* Pods_one_note.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70130C3694D335D528DC8A05 /* Pods_one_note.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +104,16 @@
 		26D273F62145726A00F92DC4 /* Tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
 		6900435D30B8717E0039E225 /* Pods-one-note.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-one-note.release.xcconfig"; path = "Pods/Target Support Files/Pods-one-note/Pods-one-note.release.xcconfig"; sourceTree = "<group>"; };
 		70130C3694D335D528DC8A05 /* Pods_one_note.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_one_note.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81F8E1AF21462E1A002D5C4D /* RichTextFormatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichTextFormatView.swift; sourceTree = "<group>"; };
+		81F8E1B121462ED9002D5C4D /* UISCreen+exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISCreen+exts.swift"; sourceTree = "<group>"; };
+		81F8E1B4214645DC002D5C4D /* CheckButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckButton.swift; sourceTree = "<group>"; };
+		81F8E1B6214646BC002D5C4D /* CheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckView.swift; sourceTree = "<group>"; };
+		81F8E1B821464B6D002D5C4D /* FormatCheckCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatCheckCell.swift; sourceTree = "<group>"; };
+		81F8E1B921464B6D002D5C4D /* FormatCheckCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormatCheckCell.xib; sourceTree = "<group>"; };
+		81F8E1BC21465795002D5C4D /* AddNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewModel.swift; sourceTree = "<group>"; };
+		81F8E1BE214669D9002D5C4D /* AuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationManager.swift; sourceTree = "<group>"; };
+		81F8E1C021466A96002D5C4D /* PhotoChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoChooser.swift; sourceTree = "<group>"; };
+		81F8E1C221466FDE002D5C4D /* UIImage+exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+exts.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +232,8 @@
 				26D273BE214521FD00F92DC4 /* Date+exts.swift */,
 				26D273F221456D0500F92DC4 /* NSAttributeString+exts.swift */,
 				26D273F421456D8000F92DC4 /* Data+exts.swift */,
+				81F8E1B121462ED9002D5C4D /* UISCreen+exts.swift */,
+				81F8E1C221466FDE002D5C4D /* UIImage+exts.swift */,
 			);
 			path = Exts;
 			sourceTree = "<group>";
@@ -223,6 +245,7 @@
 				26D273A22144F0F400F92DC4 /* NoteBookListViewModel.swift */,
 				26D273BA21451CFC00F92DC4 /* NoteBookAddViewModel.swift */,
 				26D273C4214528A700F92DC4 /* NoteBookViewModel.swift */,
+				81F8E1BC21465795002D5C4D /* AddNoteViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -239,8 +262,10 @@
 		26D273EF2145642200F92DC4 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				26D273F02145645700F92DC4 /* RichEditorToolView.swift */,
+				81F8E1B321464571002D5C4D /* RichEditor */,
 				26D273F62145726A00F92DC4 /* Tool.swift */,
+				81F8E1BE214669D9002D5C4D /* AuthorizationManager.swift */,
+				81F8E1C021466A96002D5C4D /* PhotoChooser.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -260,6 +285,19 @@
 				70130C3694D335D528DC8A05 /* Pods_one_note.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		81F8E1B321464571002D5C4D /* RichEditor */ = {
+			isa = PBXGroup;
+			children = (
+				26D273F02145645700F92DC4 /* RichEditorToolView.swift */,
+				81F8E1AF21462E1A002D5C4D /* RichTextFormatView.swift */,
+				81F8E1B821464B6D002D5C4D /* FormatCheckCell.swift */,
+				81F8E1B921464B6D002D5C4D /* FormatCheckCell.xib */,
+				81F8E1B4214645DC002D5C4D /* CheckButton.swift */,
+				81F8E1B6214646BC002D5C4D /* CheckView.swift */,
+			);
+			path = RichEditor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +365,7 @@
 				26D273D02145357100F92DC4 /* AddNoteController.xib in Resources */,
 				26D273812144D13500F92DC4 /* Assets.xcassets in Resources */,
 				26D2737F2144D13400F92DC4 /* Main.storyboard in Resources */,
+				81F8E1BB21464B6D002D5C4D /* FormatCheckCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +399,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-one-note/Pods-one-note-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/EasyAtrribute/EasyAtrribute.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
+				"${BUILT_PRODUCTS_DIR}/KMPlaceholderTextView/KMPlaceholderTextView.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -368,6 +408,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EasyAtrribute.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KMPlaceholderTextView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -389,6 +430,7 @@
 				26D273BD21451E4100F92DC4 /* String+exts.swift in Sources */,
 				26D273C5214528A700F92DC4 /* NoteBookViewModel.swift in Sources */,
 				26D273CC2145310100F92DC4 /* TableHoderView.swift in Sources */,
+				81F8E1C321466FDE002D5C4D /* UIImage+exts.swift in Sources */,
 				26D273BF214521FD00F92DC4 /* Date+exts.swift in Sources */,
 				26D273A72144F9B900F92DC4 /* NoteBookListCell.swift in Sources */,
 				26D273B52145108600F92DC4 /* HeroID.swift in Sources */,
@@ -404,20 +446,28 @@
 				26D2739D2144EC9C00F92DC4 /* UIColor+exts.swift in Sources */,
 				26D273A52144F3EC00F92DC4 /* UIButton+exts.swift in Sources */,
 				26D273F321456D0500F92DC4 /* NSAttributeString+exts.swift in Sources */,
+				81F8E1BD21465795002D5C4D /* AddNoteViewModel.swift in Sources */,
 				26D273F521456D8000F92DC4 /* Data+exts.swift in Sources */,
 				26D273982144E92900F92DC4 /* SettingController.swift in Sources */,
 				26D2737C2144D13400F92DC4 /* NoteBookListController.swift in Sources */,
 				26D273C2214523CB00F92DC4 /* NoteBookController.swift in Sources */,
 				26D273952144E26200F92DC4 /* NoteBook.swift in Sources */,
+				81F8E1C121466A96002D5C4D /* PhotoChooser.swift in Sources */,
 				26D273A92144FDC500F92DC4 /* UIView+exts.swift in Sources */,
 				26D2737A2144D13400F92DC4 /* AppDelegate.swift in Sources */,
+				81F8E1BA21464B6D002D5C4D /* FormatCheckCell.swift in Sources */,
 				26D273912144E0DB00F92DC4 /* User.swift in Sources */,
 				26D273932144E10400F92DC4 /* Note.swift in Sources */,
 				26D273A32144F0F400F92DC4 /* NoteBookListViewModel.swift in Sources */,
 				26D2739F2144ED1600F92DC4 /* UIFont+exts.swift in Sources */,
+				81F8E1B221462ED9002D5C4D /* UISCreen+exts.swift in Sources */,
+				81F8E1B021462E1A002D5C4D /* RichTextFormatView.swift in Sources */,
 				26D273F12145645700F92DC4 /* RichEditorToolView.swift in Sources */,
+				81F8E1B5214645DC002D5C4D /* CheckButton.swift in Sources */,
+				81F8E1B7214646BC002D5C4D /* CheckView.swift in Sources */,
 				26D273AB2145053B00F92DC4 /* RealmProvider.swift in Sources */,
 				26D273B321450A0800F92DC4 /* UICollectionView+exts.swift in Sources */,
+				81F8E1BF214669D9002D5C4D /* AuthorizationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

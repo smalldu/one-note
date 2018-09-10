@@ -46,12 +46,13 @@ extension NoteBookController{
     closeButton.transform = CGAffineTransform.identity.rotated(by: CGFloat(Double.pi/4))
     titleLabel.hero.id = HeroID.bookTitle
     closeButton.hero.id = HeroID.close
-    addButton.style(.add)
-    addButton.hero.modifiers = [ .translate(x: 0, y: 50, z: 0) ]
+    addButton.style(.addNote)
+    addButton.hero.modifiers = [ .translate(x: 0, y: 80, z: 0) ]
     hero.isEnabled = true
     tableView.basicsConfig()
     tableView.delegate = self
     tableView.dataSource = self
+    viewModel.retriveBook()
   }
   
 }
@@ -67,7 +68,7 @@ extension NoteBookController{
   }
   
   @IBAction func add(_ sender: Any) {
-    let controller = AddNoteController()
+    let controller = AddNoteController(name: self.name)
     self.present(controller, animated: true, completion: nil)
   }
 }
