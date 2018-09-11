@@ -24,4 +24,5 @@ extension UIColor {
   static let secondary = UIColor(rgb: 0x888888)
   static let line = UIColor(rgb: 0xeeeeee)
   static let lightBlue = UIColor(rgb: 0x06beb6)
+  
 }

@@ -14,4 +14,7 @@ struct HeroID {
   static let bookTitle = "hero-book-title"
   static let notesCell = "hero-notes-cell"
   
+  static let notesCellMonth = "hero-notes-cell-month"
+  static let notesCellWeek = "hero-notes-cell-week"
+  
 }

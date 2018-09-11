@@ -11,7 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NoteDetailController" customModule="one_note" customModuleProvider="target">
             <connections>
+                <outlet property="bottomConstraint" destination="Kv6-BW-u51" id="zjh-2M-yUu"/>
+                <outlet property="bottomView" destination="8mO-hG-2bx" id="VpL-ia-t2K"/>
                 <outlet property="closeButton" destination="2dr-sl-moJ" id="bwJ-j3-Bfq"/>
+                <outlet property="downloadButton" destination="g5g-8a-kUe" id="BAL-fV-9ET"/>
+                <outlet property="editButton" destination="An0-XY-Mhd" id="BJZ-Qw-8fu"/>
                 <outlet property="tableView" destination="aVk-12-CcO" id="HOB-NB-INw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -30,9 +34,30 @@
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8mO-hG-2bx">
                     <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wuj-XM-aKd">
+                            <rect key="frame" x="270" y="0.0" width="90" height="40"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5g-8a-kUe">
+                                    <rect key="frame" x="0.0" y="0.0" width="35" height="40"/>
+                                    <state key="normal" image="download"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="An0-XY-Mhd">
+                                    <rect key="frame" x="55" y="0.0" width="35" height="40"/>
+                                    <state key="normal" image="edit"/>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="90" id="AsE-g3-WPD"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="wuj-XM-aKd" firstAttribute="top" secondItem="8mO-hG-2bx" secondAttribute="top" id="6jk-Q4-3ZQ"/>
                         <constraint firstAttribute="height" constant="40" id="FgH-Rh-nbh"/>
+                        <constraint firstAttribute="bottom" secondItem="wuj-XM-aKd" secondAttribute="bottom" id="FqZ-GO-1pr"/>
+                        <constraint firstAttribute="trailing" secondItem="wuj-XM-aKd" secondAttribute="trailing" constant="15" id="Wge-75-rXU"/>
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aVk-12-CcO">
@@ -53,7 +78,11 @@
                 <constraint firstItem="aVk-12-CcO" firstAttribute="top" secondItem="2dr-sl-moJ" secondAttribute="bottom" constant="5" id="vw7-jh-lq4"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="-161" y="-105"/>
+            <point key="canvasLocation" x="-356" y="-408"/>
         </view>
     </objects>
+    <resources>
+        <image name="download" width="20" height="20"/>
+        <image name="edit" width="20" height="20"/>
+    </resources>
 </document>

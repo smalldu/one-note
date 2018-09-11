@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Hero
 
 class NoteBookController: UIViewController {
   
@@ -50,12 +51,17 @@ extension NoteBookController{
     addButton.style(.addNote)
     addButton.hero.modifiers = [ .translate(x: 0, y: 80, z: 0) ]
     hero.isEnabled = true
+    
     tableView.basicsConfig()
     tableView.separatorStyle = .none
     tableView.rowHeight = 120
     tableView.easyRegisterNib(NoteCell.self)
     tableView.delegate = self
     tableView.dataSource = self
+    
+    let panGesture = UIPanGestureRecognizer(target: self,action: #selector(handlePan(_:)))
+    view.addGestureRecognizer(panGesture)
+    
     viewModel.retriveBook()
   }
   
@@ -104,14 +110,44 @@ extension NoteBookController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     if let cell = tableView.cellForRow(at: indexPath) as? NoteCell {
-      lastCell?.hero.id = nil
+      lastCell?.clearHero()
       DispatchQueue.main.async { [weak self] in
         guard let `self` = self else { return }
-        cell.hero.id = HeroID.notesCell
+        cell.setHero()
         let note = self.viewModel.notes[indexPath.row]
         let controller = NoteDetailController(note: note)
         self.present(controller, animated: true, completion: nil)
         self.lastCell = cell
+      }
+    }
+  }
+  
+}
+
+
+// MARK: - gesture
+
+extension NoteBookController {
+  
+  @objc func handlePan(_ gesture: UIPanGestureRecognizer) {
+    let translation = gesture.translation(in: nil)
+    let progress = translation.x / 2 / view.bounds.width
+    
+    switch gesture.state {
+    case .began:
+      // 开始手势
+      dismiss(animated: true, completion: nil)
+    case .changed:
+      // 计算进度
+      let tablePosition = CGPoint(x: tableView.center.x + translation.x,
+                                  y: tableView.center.y)
+      Hero.shared.update(progress)
+      Hero.shared.apply(modifiers: [.position(tablePosition)], to: tableView)
+    default:
+      if progress + gesture.velocity(in: nil).x / view.bounds.width > 0.3{
+        Hero.shared.finish()
+      }else{
+        Hero.shared.cancel()
       }
     }
   }

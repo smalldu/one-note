@@ -11,7 +11,7 @@ import UIKit
 extension Data {
   
   func toAttributeString() -> NSAttributedString?{
-    if let attributeString = NSKeyedUnarchiver.unarchiveObject(with: self) as? NSMutableAttributedString {
+    if let attributeString = NSKeyedUnarchiver.unarchiveObject(with: self) as? NSAttributedString {
       return attributeString
     }
     return nil

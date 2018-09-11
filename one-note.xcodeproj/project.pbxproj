@@ -60,6 +60,11 @@
 		81F8E1BF214669D9002D5C4D /* AuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8E1BE214669D9002D5C4D /* AuthorizationManager.swift */; };
 		81F8E1C121466A96002D5C4D /* PhotoChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8E1C021466A96002D5C4D /* PhotoChooser.swift */; };
 		81F8E1C321466FDE002D5C4D /* UIImage+exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8E1C221466FDE002D5C4D /* UIImage+exts.swift */; };
+		81F8E1CC2147B69A002D5C4D /* DetailHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8E1CA2147B69A002D5C4D /* DetailHeadCell.swift */; };
+		81F8E1CD2147B69A002D5C4D /* DetailHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81F8E1CB2147B69A002D5C4D /* DetailHeadCell.xib */; };
+		81F8E1D02147B6BD002D5C4D /* DetailContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8E1CE2147B6BD002D5C4D /* DetailContentCell.swift */; };
+		81F8E1D12147B6BD002D5C4D /* DetailContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81F8E1CF2147B6BD002D5C4D /* DetailContentCell.xib */; };
+		81F8E1D32147C3FE002D5C4D /* UIScrollview+exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8E1D22147C3FE002D5C4D /* UIScrollview+exts.swift */; };
 		A935C7D688326071E34C9623 /* Pods_one_note.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70130C3694D335D528DC8A05 /* Pods_one_note.framework */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +127,11 @@
 		81F8E1BE214669D9002D5C4D /* AuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationManager.swift; sourceTree = "<group>"; };
 		81F8E1C021466A96002D5C4D /* PhotoChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoChooser.swift; sourceTree = "<group>"; };
 		81F8E1C221466FDE002D5C4D /* UIImage+exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+exts.swift"; sourceTree = "<group>"; };
+		81F8E1CA2147B69A002D5C4D /* DetailHeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeadCell.swift; sourceTree = "<group>"; };
+		81F8E1CB2147B69A002D5C4D /* DetailHeadCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailHeadCell.xib; sourceTree = "<group>"; };
+		81F8E1CE2147B6BD002D5C4D /* DetailContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContentCell.swift; sourceTree = "<group>"; };
+		81F8E1CF2147B6BD002D5C4D /* DetailContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailContentCell.xib; sourceTree = "<group>"; };
+		81F8E1D22147C3FE002D5C4D /* UIScrollview+exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollview+exts.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +208,10 @@
 				26D273A62144F9B900F92DC4 /* NoteBookListCell.swift */,
 				26D273F8214695AD00F92DC4 /* NoteCell.swift */,
 				26D273F9214695AD00F92DC4 /* NoteCell.xib */,
+				81F8E1CA2147B69A002D5C4D /* DetailHeadCell.swift */,
+				81F8E1CB2147B69A002D5C4D /* DetailHeadCell.xib */,
+				81F8E1CE2147B6BD002D5C4D /* DetailContentCell.swift */,
+				81F8E1CF2147B6BD002D5C4D /* DetailContentCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -238,7 +252,6 @@
 				26D273AC2145057D00F92DC4 /* Path.swift */,
 				26D273B02145091500F92DC4 /* UITableView+exts.swift */,
 				26D273B221450A0800F92DC4 /* UICollectionView+exts.swift */,
-				26D273B42145108600F92DC4 /* HeroID.swift */,
 				26D273B82145185B00F92DC4 /* UITextField+exts.swift */,
 				26D273BC21451E4100F92DC4 /* String+exts.swift */,
 				26D273BE214521FD00F92DC4 /* Date+exts.swift */,
@@ -246,6 +259,7 @@
 				26D273F421456D8000F92DC4 /* Data+exts.swift */,
 				81F8E1B121462ED9002D5C4D /* UISCreen+exts.swift */,
 				81F8E1C221466FDE002D5C4D /* UIImage+exts.swift */,
+				81F8E1D22147C3FE002D5C4D /* UIScrollview+exts.swift */,
 			);
 			path = Exts;
 			sourceTree = "<group>";
@@ -276,6 +290,7 @@
 			children = (
 				81F8E1B321464571002D5C4D /* RichEditor */,
 				26D273F62145726A00F92DC4 /* Tool.swift */,
+				26D273B42145108600F92DC4 /* HeroID.swift */,
 				81F8E1BE214669D9002D5C4D /* AuthorizationManager.swift */,
 				81F8E1C021466A96002D5C4D /* PhotoChooser.swift */,
 			);
@@ -374,11 +389,13 @@
 			files = (
 				26D273FB214695AD00F92DC4 /* NoteCell.xib in Resources */,
 				26D273C3214523CB00F92DC4 /* NoteBookController.xib in Resources */,
+				81F8E1CD2147B69A002D5C4D /* DetailHeadCell.xib in Resources */,
 				26D273842144D13500F92DC4 /* LaunchScreen.storyboard in Resources */,
 				26D273D02145357100F92DC4 /* AddNoteController.xib in Resources */,
 				26D273812144D13500F92DC4 /* Assets.xcassets in Resources */,
 				26D2737F2144D13400F92DC4 /* Main.storyboard in Resources */,
 				26D274012146AC9700F92DC4 /* NoteDetailController.xib in Resources */,
+				81F8E1D12147B6BD002D5C4D /* DetailContentCell.xib in Resources */,
 				81F8E1BB21464B6D002D5C4D /* FormatCheckCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,6 +465,7 @@
 				26D273BF214521FD00F92DC4 /* Date+exts.swift in Sources */,
 				26D273A72144F9B900F92DC4 /* NoteBookListCell.swift in Sources */,
 				26D273B52145108600F92DC4 /* HeroID.swift in Sources */,
+				81F8E1D32147C3FE002D5C4D /* UIScrollview+exts.swift in Sources */,
 				26D273A12144EF2A00F92DC4 /* UILabel.swift in Sources */,
 				26D274002146AC9700F92DC4 /* NoteDetailController.swift in Sources */,
 				26D273B92145185B00F92DC4 /* UITextField+exts.swift in Sources */,
@@ -457,6 +475,7 @@
 				26D273BB21451CFC00F92DC4 /* NoteBookAddViewModel.swift in Sources */,
 				26D273B12145091500F92DC4 /* UITableView+exts.swift in Sources */,
 				26D273CB2145310100F92DC4 /* TableView+Empty.swift in Sources */,
+				81F8E1D02147B6BD002D5C4D /* DetailContentCell.swift in Sources */,
 				26D273F72145726A00F92DC4 /* Tool.swift in Sources */,
 				26D2739D2144EC9C00F92DC4 /* UIColor+exts.swift in Sources */,
 				26D273A52144F3EC00F92DC4 /* UIButton+exts.swift in Sources */,
@@ -475,6 +494,7 @@
 				26D273932144E10400F92DC4 /* Note.swift in Sources */,
 				26D273A32144F0F400F92DC4 /* NoteBookListViewModel.swift in Sources */,
 				26D2739F2144ED1600F92DC4 /* UIFont+exts.swift in Sources */,
+				81F8E1CC2147B69A002D5C4D /* DetailHeadCell.swift in Sources */,
 				26D273FA214695AD00F92DC4 /* NoteCell.swift in Sources */,
 				81F8E1B221462ED9002D5C4D /* UISCreen+exts.swift in Sources */,
 				81F8E1B021462E1A002D5C4D /* RichTextFormatView.swift in Sources */,

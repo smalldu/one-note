@@ -40,6 +40,16 @@ class NoteCell: UITableViewCell {
     contentLabel.numberOfLines = 3
   }
   
+  func setHero(){
+    monthLabel.hero.id = HeroID.notesCellMonth
+    timeLabel.hero.id = HeroID.notesCellWeek
+  }
+  
+  func clearHero(){
+    monthLabel.hero.id = nil
+    timeLabel.hero.id = nil
+  }
+  
   func configWith(_ note: Note){
     if let date = note.updateTime{
       let (year,month,day) = date.ymd()
