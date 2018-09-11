@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NoteDetailController" customModule="one_note" customModuleProvider="target">
             <connections>
-                <outlet property="backButton" destination="2dr-sl-moJ" id="OsG-gM-AQc"/>
+                <outlet property="closeButton" destination="2dr-sl-moJ" id="bwJ-j3-Bfq"/>
                 <outlet property="tableView" destination="aVk-12-CcO" id="HOB-NB-INw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,9 +21,9 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dr-sl-moJ">
-                    <rect key="frame" x="15" y="30" width="34" height="30"/>
-                    <state key="normal" title="back"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dr-sl-moJ">
+                    <rect key="frame" x="325" y="45" width="30" height="34"/>
+                    <state key="normal" title="b"/>
                     <connections>
                         <action selector="hero_dismissViewController" destination="-1" eventType="touchUpInside" id="g7o-MF-YuT"/>
                     </connections>
@@ -36,24 +36,24 @@
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aVk-12-CcO">
-                    <rect key="frame" x="0.0" y="65" width="375" height="562"/>
+                    <rect key="frame" x="0.0" y="84" width="375" height="543"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="8mO-hG-2bx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1F4-MJ-3e4"/>
-                <constraint firstItem="2dr-sl-moJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="4Fs-Xs-vov"/>
+                <constraint firstItem="2dr-sl-moJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="4Fs-Xs-vov"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2dr-sl-moJ" secondAttribute="trailing" constant="20" id="4ji-KD-jwv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aVk-12-CcO" secondAttribute="trailing" id="Cf0-aN-lKL"/>
                 <constraint firstItem="aVk-12-CcO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="GAX-5K-ztW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="8mO-hG-2bx" secondAttribute="bottom" id="Kv6-BW-u51"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8mO-hG-2bx" secondAttribute="trailing" id="RaL-RK-jgr"/>
-                <constraint firstItem="2dr-sl-moJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="Sxg-I5-BjB"/>
                 <constraint firstItem="8mO-hG-2bx" firstAttribute="top" secondItem="aVk-12-CcO" secondAttribute="bottom" id="kvp-M9-dYq"/>
                 <constraint firstItem="aVk-12-CcO" firstAttribute="top" secondItem="2dr-sl-moJ" secondAttribute="bottom" constant="5" id="vw7-jh-lq4"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="20" y="-63"/>
+            <point key="canvasLocation" x="-161" y="-105"/>
         </view>
     </objects>
 </document>

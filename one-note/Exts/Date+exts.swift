@@ -25,7 +25,7 @@ extension Date{
   }
   
   func formatedWeekDay()->String{
-    let mapping = [1:"一",2:"二",3:"三",4:"四",5:"五",6:"六",7:"日"]
+    let mapping = [1:"MON",2:"TUE",3:"WED",4:"THU",5:"FRI",6:"SAT",7:"SUN"]
     return mapping[weekDay()] ?? "日"
   }
   

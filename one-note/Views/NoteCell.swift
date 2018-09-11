@@ -15,6 +15,7 @@ class NoteCell: UITableViewCell {
   @IBOutlet private weak var timeLabel: UILabel!
   @IBOutlet private weak var contentLabel: UILabel!
   @IBOutlet private weak var coverImageView: UIImageView!
+  @IBOutlet private weak var yearLabel: UILabel!
   @IBOutlet private weak var ctView: UIView!
   @IBOutlet private weak var lineView: UIView!
   
@@ -26,9 +27,13 @@ class NoteCell: UITableViewCell {
     lineView.backgroundColor = UIColor.line
     ctView.backgroundColor = UIColor.white
     ctView.littleShadow()
-    timeLabel.font = UIFont.regularOf(14)
+    timeLabel.font = UIFont.copperplate(14)
     timeLabel.textColor = UIColor.body
     monthLabel.textColor = UIColor.lightBlue
+    monthLabel.numberOfLines = 2
+    
+    yearLabel.font = UIFont.lightOf(8)
+    yearLabel.textColor = UIColor.remind
     
     contentLabel.font = UIFont.lightOf(13)
     contentLabel.textColor = UIColor.body
@@ -37,12 +42,13 @@ class NoteCell: UITableViewCell {
   
   func configWith(_ note: Note){
     if let date = note.updateTime{
-      let (_,month,day) = date.ymd()
-      monthLabel.attributedText = "\(month)".attribute().ez_font(UIFont.regularOf(12))
+      let (year,month,day) = date.ymd()
+      monthLabel.attributedText = "\(day)".attribute().ez_font(UIFont.copperplate(25))
         +
-      " \(day)".attribute().ez_font(UIFont.regularOf(22))
+      "\n\(Tool.convertMonthToEnglish(month))".attribute().ez_font(UIFont.copperplate(16))
       let time = date.toString(format: "HH:mm")
-      timeLabel.text = "星期\(date.formatedWeekDay()) \(time)"
+      timeLabel.text = "\(date.formatedWeekDay()) \(time)"
+      yearLabel.text = "\(year)"
     }
     if let cover = note.coverImage, let image = UIImage(data: cover){
       coverImageView.image = image

@@ -12,5 +12,6 @@ struct HeroID {
   static let title = "hero-title"
   static let close = "hero-close"
   static let bookTitle = "hero-book-title"
+  static let notesCell = "hero-notes-cell"
   
 }

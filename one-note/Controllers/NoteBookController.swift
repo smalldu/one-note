@@ -14,6 +14,7 @@ class NoteBookController: UIViewController {
   @IBOutlet weak var closeButton: UIButton!
   @IBOutlet weak var addButton: UIButton!
   @IBOutlet weak var tableView: UITableView!
+  fileprivate var lastCell: NoteCell?
   
   var viewModel: NoteBookViewModel
   
@@ -102,9 +103,17 @@ extension NoteBookController: UITableViewDataSource {
 extension NoteBookController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let note = self.viewModel.notes[indexPath.row]
-    let controller = NoteDetailController()
-    self.present(controller, animated: true, completion: nil)
+    if let cell = tableView.cellForRow(at: indexPath) as? NoteCell {
+      lastCell?.hero.id = nil
+      DispatchQueue.main.async { [weak self] in
+        guard let `self` = self else { return }
+        cell.hero.id = HeroID.notesCell
+        let note = self.viewModel.notes[indexPath.row]
+        let controller = NoteDetailController(note: note)
+        self.present(controller, animated: true, completion: nil)
+        self.lastCell = cell
+      }
+    }
   }
   
 }

@@ -410,7 +410,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-one-note/Pods-one-note-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-one-note/Pods-one-note-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/EasyAtrribute/EasyAtrribute.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/KMPlaceholderTextView/KMPlaceholderTextView.framework",
@@ -429,7 +429,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-one-note/Pods-one-note-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-one-note/Pods-one-note-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
