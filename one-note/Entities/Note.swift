@@ -18,6 +18,9 @@ import RealmSwift
   dynamic var createTime: Date?
   dynamic var updateTime: Date?
   
+  // 双向关系
+  let noteBook = LinkingObjects(fromType: NoteBook.self, property: "notes")
+  
   convenience init(_ content: String, attributeContent: Data?,image: Data?) {
     self.init()
     self.content = content

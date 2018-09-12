@@ -65,6 +65,7 @@
 		81F8E1D02147B6BD002D5C4D /* DetailContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8E1CE2147B6BD002D5C4D /* DetailContentCell.swift */; };
 		81F8E1D12147B6BD002D5C4D /* DetailContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81F8E1CF2147B6BD002D5C4D /* DetailContentCell.xib */; };
 		81F8E1D32147C3FE002D5C4D /* UIScrollview+exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8E1D22147C3FE002D5C4D /* UIScrollview+exts.swift */; };
+		81F8E1D5214919C1002D5C4D /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8E1D4214919C1002D5C4D /* NoteViewModel.swift */; };
 		A935C7D688326071E34C9623 /* Pods_one_note.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70130C3694D335D528DC8A05 /* Pods_one_note.framework */; };
 /* End PBXBuildFile section */
 
@@ -132,6 +133,7 @@
 		81F8E1CE2147B6BD002D5C4D /* DetailContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContentCell.swift; sourceTree = "<group>"; };
 		81F8E1CF2147B6BD002D5C4D /* DetailContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailContentCell.xib; sourceTree = "<group>"; };
 		81F8E1D22147C3FE002D5C4D /* UIScrollview+exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollview+exts.swift"; sourceTree = "<group>"; };
+		81F8E1D4214919C1002D5C4D /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 			children = (
 				26D273AA2145053B00F92DC4 /* RealmProvider.swift */,
 				26D273AE2145066F00F92DC4 /* NoteBookModel.swift */,
+				81F8E1D4214919C1002D5C4D /* NoteViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81F8E1D5214919C1002D5C4D /* NoteViewModel.swift in Sources */,
 				26D273AF2145066F00F92DC4 /* NoteBookModel.swift in Sources */,
 				26D273B72145119100F92DC4 /* AddNoteBookController.swift in Sources */,
 				26D273BD21451E4100F92DC4 /* String+exts.swift in Sources */,

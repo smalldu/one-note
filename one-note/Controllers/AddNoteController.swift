@@ -11,15 +11,29 @@ import KMPlaceholderTextView
 
 class AddNoteController: UIViewController {
   
+  enum PageType {
+    case add(String)
+    case edit(Note)
+    
+    var name: String {
+      switch self {
+      case .add(let name):
+        return name
+      default:
+        return ""
+      }
+    }
+  }
+  
   @IBOutlet weak var closeButton: UIButton!
   @IBOutlet weak var textView: KMPlaceholderTextView!
   var viewModel: AddNoteViewModel
   var editorToolView: RichEditorToolView?
   
-  let name: String
-  init(name: String) {
-    self.name = name
-    viewModel = AddNoteViewModel(name)
+  let pageType: PageType
+  init(pageType: PageType) {
+    self.pageType = pageType
+    viewModel = AddNoteViewModel(pageType.name)
     super.init(nibName: "AddNoteController", bundle: nil)
   }
   
@@ -56,6 +70,7 @@ extension AddNoteController {
     closeButton.style(.add)
     closeButton.transform = CGAffineTransform.identity.rotated(by: CGFloat(Double.pi/4))
     closeButton.hero.id = HeroID.close
+    textView.hero.id = HeroID.notesCellContent
     hero.isEnabled = true
     textView.placeholder = viewModel.placehoder
     textView.placeholderColor = UIColor.remind
@@ -63,13 +78,25 @@ extension AddNoteController {
     textView.font = UIFont.regularOf(17)
     editorToolView = textView.configRichToolBar(17)
     editorToolView?.delegate = self
-    
     textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
     
+    renderPageIfNeeded()
     NotificationCenter.default.addObserver(self, selector: #selector(updateTextLayout(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(updateTextLayout(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
   }
   
+  
+  /// 编辑模式需要先赋值
+  func renderPageIfNeeded(){
+    switch pageType {
+    case .edit(let note):
+      if let attributeData = note.attributeContent,let attributeText = attributeData.toAttributeString() {
+        self.textView.attributedText = attributeText
+      }
+    default:
+      break
+    }
+  }
   
   // 自适应 contentInset
   @objc func updateTextLayout(_ notification:Notification){
@@ -105,12 +132,22 @@ extension AddNoteController: RichEditorToolViewDelegate {
   
   func richEditorToolViewDidClickSave(_ view: RichEditorToolView) {
     if self.textView.attributedText.string.isEmpty || self.textView.attributedText == nil{
+      // TODO: tip
       return
     }
     let content = self.textView.attributedText.string
     let attributeDate = self.textView.attributedText.toArchiveData()
     let image = self.textView.attributedText.getCoverData()
-    self.viewModel.save(content, attributeContent: attributeDate,image: image)
+    switch pageType {
+    case .add:
+      self.viewModel.save(content, attributeContent: attributeDate,image: image)
+    case .edit(let note):
+      self.viewModel.update(note) { (note) in
+        note.content = content
+        note.attributeContent = attributeDate
+        note.coverImage = image
+      }
+    }
     
     self.dismiss(animated: true, completion: nil)
   }

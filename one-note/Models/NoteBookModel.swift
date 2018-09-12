@@ -24,7 +24,7 @@ class NoteBookModel {
   
   func save(_ name: String, password: String?){
     let realm = RealmProvider.notes.realm
-    let noteBook = NoteBook(name, password: password, user: nil)
+    let noteBook = NoteBook(name, password: password)
     try? realm?.write {
       realm?.add(noteBook)
     }
@@ -41,8 +41,7 @@ class NoteBookModel {
       }
     }
   }
-  
-  
+
 }
 
 

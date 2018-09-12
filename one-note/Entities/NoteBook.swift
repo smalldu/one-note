@@ -14,7 +14,7 @@ import RealmSwift
   dynamic var name: String = ""
   dynamic var password: String = ""
   dynamic var createDate: Date = Date()
-  dynamic var user: User?
+  let user = LinkingObjects(fromType: User.self, property: "noteBooks")
   
   // 是否有密码
   var isLock: Bool {
@@ -23,11 +23,10 @@ import RealmSwift
   
   let notes = List<Note>()
   
-  convenience init(_ name: String, password: String?,user: User?) {
+  convenience init(_ name: String, password: String?) {
     self.init()
     self.name = name
     self.password = password ?? ""
-    self.user = user
   }
   
   override static func primaryKey() -> String? {

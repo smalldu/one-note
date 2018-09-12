@@ -9,6 +9,12 @@
 import Foundation
 import RealmSwift
 
+//MARK: - 处理监听结果集发生改变的逻辑
+typealias DeletedIndex = Int
+typealias InsertedIndex = Int
+typealias UpdatedIndex = Int
+typealias ChangesCallback = ([DeletedIndex], [InsertedIndex], [UpdatedIndex]) -> Void
+
 struct NoteBookListViewModel {
   
   private var _books: Results<NoteBook>?
@@ -25,12 +31,6 @@ struct NoteBookListViewModel {
   init() {
     _books = model.books()
   }
-  
-  //MARK: - 处理监听结果集发生改变的逻辑
-  typealias DeletedIndex = Int
-  typealias InsertedIndex = Int
-  typealias UpdatedIndex = Int
-  typealias ChangesCallback = ([DeletedIndex], [InsertedIndex], [UpdatedIndex]) -> Void
   
   var didUpdate: ChangesCallback? = nil {
     didSet {

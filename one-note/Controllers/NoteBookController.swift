@@ -35,6 +35,9 @@ class NoteBookController: UIViewController {
     setup()
   }
   
+  deinit {
+    self.viewModel.didUpdate = nil
+  }
 }
 
 
@@ -63,6 +66,18 @@ extension NoteBookController{
     view.addGestureRecognizer(panGesture)
     
     viewModel.retriveBook()
+    // 设置监听
+    setupObserve()
+  }
+  
+  func setupObserve(){
+    self.viewModel.didUpdate = { [weak self] deleted , inserted , updated in
+      if inserted.count > 0 {
+        self?.tableView.reloadData()
+      }else{
+        self?.tableView.applyChanges(deletions: deleted, insertions: inserted, updates: updated)
+      }
+    }
   }
   
 }
@@ -78,7 +93,8 @@ extension NoteBookController{
   }
   
   @IBAction func add(_ sender: Any) {
-    let controller = AddNoteController(name: self.name)
+    let controller = AddNoteController(pageType: .add(self.name))
+    
     self.present(controller, animated: true, completion: nil)
   }
 }

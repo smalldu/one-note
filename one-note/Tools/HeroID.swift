@@ -16,5 +16,6 @@ struct HeroID {
   
   static let notesCellMonth = "hero-notes-cell-month"
   static let notesCellWeek = "hero-notes-cell-week"
+  static let notesCellContent = "hero-notes-cell-content"
   
 }

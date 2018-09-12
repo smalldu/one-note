@@ -92,7 +92,8 @@ extension NoteDetailController {
   }
   
   @objc func edit(){
-    
+    let controller = AddNoteController(pageType: .edit(note))
+    present(controller, animated: true, completion: nil)
   }
 }
 

@@ -19,6 +19,8 @@ class DetailContentCell: UITableViewCell {
     markLabel.font = UIFont.copperplate(15)
     markLabel.textColor = UIColor.remind
     markLabel.text = "one note"
+    
+    contentTextView.hero.id = HeroID.notesCellContent
   }
   
   func configWith(_ note: Note) {

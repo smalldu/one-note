@@ -15,13 +15,26 @@ extension IndexPath {
 }
 
 extension UITableView {
+  
   func applyChanges(deletions: [Int], insertions: [Int], updates: [Int]) {
-    beginUpdates()
-    deleteRows(at: deletions.map(IndexPath.fromRow), with: .automatic)
-    insertRows(at: insertions.map(IndexPath.fromRow), with: .automatic)
-    reloadRows(at: updates.map(IndexPath.fromRow), with: .automatic)
-    endUpdates()
+    
+    if deletions.count == 0 && insertions.count == 0 && updates.count == 0{
+      reloadData()
+    }else{
+      beginUpdates()
+      if deletions.count > 0{
+        deleteRows(at: deletions.map(IndexPath.fromRow), with: .automatic)
+      }
+      if insertions.count > 0{
+        insertRows(at: insertions.map(IndexPath.fromRow), with: .automatic)
+      }
+      if updates.count > 0{
+        reloadRows(at: updates.map(IndexPath.fromRow), with: .automatic)
+      }
+      endUpdates()
+    }
   }
+  
 }
 
 
