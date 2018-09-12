@@ -15,6 +15,8 @@ import RealmSwift
   dynamic var id: String = UUID().uuidString
   dynamic var content: String?
   dynamic var data: Data?
+  dynamic var width: Float = 0.0
+  dynamic var height: Float = 0.0
   
   override static func primaryKey()-> String? {
     return "id"
