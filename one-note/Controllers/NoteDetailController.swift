@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class NoteDetailController: UIViewController {
   
@@ -16,6 +17,7 @@ class NoteDetailController: UIViewController {
   @IBOutlet private var downloadButton: UIButton!
   @IBOutlet private var editButton: UIButton!
   @IBOutlet private var bottomConstraint: NSLayoutConstraint!
+  fileprivate var _token: NotificationToken?
   
   enum RowType{
     case head,content
@@ -41,12 +43,19 @@ class NoteDetailController: UIViewController {
     setup()
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    setupGesture()
+  }
+  
+  deinit {
+    _token?.invalidate()
+  }
 }
-
 
 // MARK: - setup
 
-extension NoteDetailController {
+extension NoteDetailController: Gestureable {
   
   func setup(){
     view.backgroundColor = UIColor.white
@@ -64,6 +73,18 @@ extension NoteDetailController {
     
     downloadButton.addTarget(self, action: #selector(download), for: .touchUpInside)
     editButton.addTarget(self, action: #selector(edit), for: .touchUpInside)
+
+    setupObserver()
+  }
+  
+  func setupObserver(){
+    _token = note.observe({ [weak self] (change) in
+      switch change{
+      case .change:
+        self?.tableView.reloadData()
+      default:break
+      }
+    })
   }
   
 }

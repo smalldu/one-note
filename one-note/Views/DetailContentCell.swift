@@ -20,7 +20,7 @@ class DetailContentCell: UITableViewCell {
     markLabel.textColor = UIColor.remind
     markLabel.text = "one note"
     
-    contentTextView.hero.id = HeroID.notesCellContent
+    self.hero.id = HeroID.notesCellContent
   }
   
   func configWith(_ note: Note) {

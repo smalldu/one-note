@@ -14,6 +14,19 @@ import RealmSwift
   dynamic var name: String = ""
   dynamic var password: String = ""
   dynamic var createDate: Date = Date()
+  dynamic var _type: Int = 0
+  
+  enum BookType: Int{
+    case note = 0
+    case imageNote = 1
+  }
+  
+  // book 类型
+  var bookType: BookType {
+    set { _type = newValue.rawValue }
+    get { return BookType(rawValue: _type)! }
+  }
+  
   let user = LinkingObjects(fromType: User.self, property: "noteBooks")
   
   // 是否有密码

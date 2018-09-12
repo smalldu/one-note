@@ -25,12 +25,17 @@ class AddNoteBookController: UIViewController {
     
     setup()
   }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    setupGesture()
+  }
 }
 
 
 // MARK: - setup
 
-extension AddNoteBookController{
+extension AddNoteBookController: Gestureable{
   
   func setup(){
     titleLabel.style(.title("New Notebook"))

@@ -35,6 +35,11 @@ class NoteBookController: UIViewController {
     setup()
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    setupGesture()
+  }
+  
   deinit {
     self.viewModel.didUpdate = nil
   }
@@ -43,7 +48,7 @@ class NoteBookController: UIViewController {
 
 // MARK: - setup
 
-extension NoteBookController{
+extension NoteBookController: Gestureable{
   
   func setup(){
     titleLabel.style(.title(self.name))
@@ -61,10 +66,7 @@ extension NoteBookController{
     tableView.easyRegisterNib(NoteCell.self)
     tableView.delegate = self
     tableView.dataSource = self
-    
-    let panGesture = UIPanGestureRecognizer(target: self,action: #selector(handlePan(_:)))
-    view.addGestureRecognizer(panGesture)
-    
+  
     viewModel.retriveBook()
     // 设置监听
     setupObserve()
@@ -139,46 +141,4 @@ extension NoteBookController: UITableViewDelegate {
   }
   
 }
-
-
-// MARK: - gesture
-
-extension NoteBookController {
-  
-  @objc func handlePan(_ gesture: UIPanGestureRecognizer) {
-    let translation = gesture.translation(in: nil)
-    let progress = translation.x / 2 / view.bounds.width
-    
-    switch gesture.state {
-    case .began:
-      // 开始手势
-      dismiss(animated: true, completion: nil)
-    case .changed:
-      // 计算进度
-      let tablePosition = CGPoint(x: tableView.center.x + translation.x,
-                                  y: tableView.center.y)
-      Hero.shared.update(progress)
-      Hero.shared.apply(modifiers: [.position(tablePosition)], to: tableView)
-    default:
-      if progress + gesture.velocity(in: nil).x / view.bounds.width > 0.3{
-        Hero.shared.finish()
-      }else{
-        Hero.shared.cancel()
-      }
-    }
-  }
-  
-}
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -10,11 +10,24 @@ import UIKit
 
 class SettingController: UIViewController {
   
+  @IBOutlet weak var titleLabel: UILabel!
+  @IBOutlet weak var tableView: UITableView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    layoutUI()
   }
   
+}
+
+extension SettingController {
+  
+  func layoutUI() {
+    titleLabel.style(.title("SETTING"))
+    tableView.basicsConfig()
+    
+    
+  }
   
 }
 

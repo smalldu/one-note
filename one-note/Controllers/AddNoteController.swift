@@ -48,6 +48,7 @@ class AddNoteController: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    setupGesture()
     self.textView.becomeFirstResponder()
   }
   
@@ -64,7 +65,7 @@ class AddNoteController: UIViewController {
 
 // MARK: - setup
 
-extension AddNoteController {
+extension AddNoteController: Gestureable {
   
   func setup() {
     closeButton.style(.add)

@@ -35,15 +35,7 @@ import RealmSwift
   }
 }
 
-@objcMembers class ImageNote: Object {
-  
-  dynamic var id: String = UUID().uuidString
-  dynamic var data: Data?
-  
-  override static func primaryKey() -> String? {
-    return "id"
-  }
-}
+
 
 
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		261D0DF6214940DF003EF3C7 /* Gestureable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261D0DF5214940DF003EF3C7 /* Gestureable.swift */; };
+		261D0DF821495632003EF3C7 /* ImageNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261D0DF721495632003EF3C7 /* ImageNote.swift */; };
 		26D2737A2144D13400F92DC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D273792144D13400F92DC4 /* AppDelegate.swift */; };
 		26D2737C2144D13400F92DC4 /* NoteBookListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2737B2144D13400F92DC4 /* NoteBookListController.swift */; };
 		26D2737F2144D13400F92DC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26D2737D2144D13400F92DC4 /* Main.storyboard */; };
@@ -71,6 +73,8 @@
 
 /* Begin PBXFileReference section */
 		01967959ECFF2E286C09E5F4 /* Pods-one-note.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-one-note.debug.xcconfig"; path = "Pods/Target Support Files/Pods-one-note/Pods-one-note.debug.xcconfig"; sourceTree = "<group>"; };
+		261D0DF5214940DF003EF3C7 /* Gestureable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gestureable.swift; sourceTree = "<group>"; };
+		261D0DF721495632003EF3C7 /* ImageNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNote.swift; sourceTree = "<group>"; };
 		26D273762144D13400F92DC4 /* one-note.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "one-note.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D273792144D13400F92DC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26D2737B2144D13400F92DC4 /* NoteBookListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteBookListController.swift; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 				26D273902144E0DB00F92DC4 /* User.swift */,
 				26D273922144E10400F92DC4 /* Note.swift */,
 				26D273942144E26200F92DC4 /* NoteBook.swift */,
+				261D0DF721495632003EF3C7 /* ImageNote.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -275,6 +280,7 @@
 				26D273BA21451CFC00F92DC4 /* NoteBookAddViewModel.swift */,
 				26D273C4214528A700F92DC4 /* NoteBookViewModel.swift */,
 				81F8E1BC21465795002D5C4D /* AddNoteViewModel.swift */,
+				261D0DF5214940DF003EF3C7 /* Gestureable.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -480,6 +486,7 @@
 				26D273B12145091500F92DC4 /* UITableView+exts.swift in Sources */,
 				26D273CB2145310100F92DC4 /* TableView+Empty.swift in Sources */,
 				81F8E1D02147B6BD002D5C4D /* DetailContentCell.swift in Sources */,
+				261D0DF821495632003EF3C7 /* ImageNote.swift in Sources */,
 				26D273F72145726A00F92DC4 /* Tool.swift in Sources */,
 				26D2739D2144EC9C00F92DC4 /* UIColor+exts.swift in Sources */,
 				26D273A52144F3EC00F92DC4 /* UIButton+exts.swift in Sources */,
@@ -488,6 +495,7 @@
 				26D273F521456D8000F92DC4 /* Data+exts.swift in Sources */,
 				26D273982144E92900F92DC4 /* SettingController.swift in Sources */,
 				26D2737C2144D13400F92DC4 /* NoteBookListController.swift in Sources */,
+				261D0DF6214940DF003EF3C7 /* Gestureable.swift in Sources */,
 				26D273C2214523CB00F92DC4 /* NoteBookController.swift in Sources */,
 				26D273952144E26200F92DC4 /* NoteBook.swift in Sources */,
 				81F8E1C121466A96002D5C4D /* PhotoChooser.swift in Sources */,
