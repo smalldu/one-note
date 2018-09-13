@@ -41,4 +41,29 @@ extension UIView{
     self.layer.shadowOffset = CGSize(width: 0, height: 0)
   }
   
+  
+  func shake(){
+    let originBackColor = self.backgroundColor
+    // 晃动
+    UIView.animateKeyframes(withDuration: 0.5, delay: 0, options: .allowUserInteraction , animations: {
+      self.backgroundColor = UIColor.red
+      UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.25, animations: {
+        self.transform = CGAffineTransform.identity.rotated(by: CGFloat(Double.pi/58) )
+      })
+      UIView.addKeyframe(withRelativeStartTime: 0.25, relativeDuration: 0.5, animations: {
+        self.transform = CGAffineTransform.identity.rotated(by: -CGFloat(Double.pi/58) )
+      })
+      UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.75, animations: {
+        self.transform = CGAffineTransform.identity.rotated(by: CGFloat(Double.pi/64) )
+      })
+      UIView.addKeyframe(withRelativeStartTime: 0.75, relativeDuration: 1, animations: {
+        self.transform = CGAffineTransform.identity.rotated(by: -CGFloat(Double.pi/64) )
+      })
+    }, completion: { b in
+      self.transform = CGAffineTransform.identity
+      self.backgroundColor = originBackColor
+    })
+    
+  }
+  
 }

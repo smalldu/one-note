@@ -114,6 +114,7 @@ extension AddNoteBookController {
     
     guard viewModel.check() else {
       print("请填写。。。")
+      nameField.shake()
       return
     }
     self.dismiss(animated: true) { [weak self] in
