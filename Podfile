@@ -7,4 +7,5 @@ target 'one-note' do
   pod 'SnapKit'
   pod 'EasyAtrribute'
   pod 'KMPlaceholderTextView'
+  pod 'ImagePicker'
 end

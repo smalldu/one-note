@@ -18,6 +18,10 @@ class AddNoteBookController: UIViewController {
   @IBOutlet weak var nameField: UITextField!
   @IBOutlet weak var passwordField: UITextField!
   
+  @IBOutlet weak var radioView: UIStackView!
+  @IBOutlet weak var noteButton: UIButton!
+  @IBOutlet weak var imageNoteButton: UIButton!
+  
   lazy var viewModel = NoteBookAddViewModel()
   
   override func viewDidLoad() {
@@ -55,11 +59,22 @@ extension AddNoteBookController: Gestureable{
     passwordField.configAccessoryView()
     passwordField.isSecureTextEntry = true
     
-    fieldView.hero.modifiers = [ .translate(x: 500, y: 0, z: 0) ]
+    noteButton.normal_title = " 笔记"
+    noteButton.normal_color = UIColor.body
+    imageNoteButton.normal_title = " 相册"
+    imageNoteButton.normal_color = UIColor.body
+    noteButton.titleLabel?.font = UIFont.regularOf(14)
+    imageNoteButton.titleLabel?.font = UIFont.regularOf(14)
+    
+    radioView.hero.modifiers = [ .translate(x: -200, y: 0, z: 0) ]
+    fieldView.hero.modifiers = [ .translate(x: -500, y: 0, z: 0) ]
     submitButton.hero.modifiers = [ .translate(x: 200, y: 0, z: 0) ]
     
     nameField.addTarget(self, action: #selector(nameDidChange(_:)), for: .allEditingEvents)
     passwordField.addTarget(self, action: #selector(pwdDidChange(_:)), for: .allEditingEvents)
+    
+    noteButton.addTarget(self, action: #selector(clickNote), for: .touchUpInside)
+    imageNoteButton.addTarget(self, action: #selector(clickImageNote), for: .touchUpInside)
   }
   
 }
@@ -68,6 +83,18 @@ extension AddNoteBookController: Gestureable{
 // MARK: - operaters
 
 extension AddNoteBookController {
+  
+  @objc func clickNote(){
+    noteButton.normal_image = #imageLiteral(resourceName: "radio_checked")
+    imageNoteButton.normal_image = #imageLiteral(resourceName: "radio_unchecked")
+    viewModel.typeChanged(.note)
+  }
+  
+  @objc func clickImageNote(){
+    noteButton.normal_image = #imageLiteral(resourceName: "radio_unchecked")
+    imageNoteButton.normal_image = #imageLiteral(resourceName: "radio_checked")
+    viewModel.typeChanged(.imageNote)
+  }
   
   @objc func nameDidChange(_ textField: UITextField){
     viewModel.nameChange(textField.text)

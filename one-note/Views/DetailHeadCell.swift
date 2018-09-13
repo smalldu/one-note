@@ -16,6 +16,7 @@ class DetailHeadCell: UITableViewCell {
   override func awakeFromNib() {
     super.awakeFromNib()
     selectionStyle = .none
+    backgroundColor = UIColor.clear
     monthLabel.font = UIFont.copperplate(35)
     monthLabel.textColor = UIColor.body
     monthLabel.numberOfLines = 0

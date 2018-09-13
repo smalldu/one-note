@@ -36,10 +36,11 @@ import RealmSwift
   
   let notes = List<Note>()
   
-  convenience init(_ name: String, password: String?) {
+  convenience init(_ name: String, password: String?, bookType: BookType) {
     self.init()
     self.name = name
     self.password = password ?? ""
+    self.bookType = bookType
   }
   
   override static func primaryKey() -> String? {

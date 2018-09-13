@@ -22,9 +22,9 @@ class NoteBookModel {
     return realm?.object(ofType: NoteBook.self, forPrimaryKey: name)
   }
   
-  func save(_ name: String, password: String?){
+  func save(_ name: String, password: String?, type: NoteBook.BookType){
     let realm = RealmProvider.notes.realm
-    let noteBook = NoteBook(name, password: password)
+    let noteBook = NoteBook(name, password: password,bookType: type)
     try? realm?.write {
       realm?.add(noteBook)
     }

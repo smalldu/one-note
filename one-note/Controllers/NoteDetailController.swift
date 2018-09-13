@@ -62,7 +62,8 @@ extension NoteDetailController: Gestureable {
     closeButton.style(.add)
     closeButton.transform = CGAffineTransform.identity.rotated(by: CGFloat(Double.pi/4))
     closeButton.hero.id = HeroID.close
-    bottomView.hero.modifiers = [ .translate(x: 0, y: 40, z: 0)  ]
+    bottomView.backgroundColor = UIColor.clear
+    bottomView.hero.modifiers = [ .translate(x: 0, y: 40, z: 0) ]
     hero.isEnabled = true
     tableView.basicsConfig()
     tableView.separatorStyle = .none
@@ -70,6 +71,9 @@ extension NoteDetailController: Gestureable {
     tableView.easyRegisterNib(DetailContentCell.self)
     tableView.dataSource = self
     tableView.delegate = self
+//    tableView.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "pattern"))
+//    view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "pattern"))
+    tableView.contentInset = UIEdgeInsets(top: 90, left: 0, bottom: 40, right: 0)
     
     downloadButton.addTarget(self, action: #selector(download), for: .touchUpInside)
     editButton.addTarget(self, action: #selector(edit), for: .touchUpInside)

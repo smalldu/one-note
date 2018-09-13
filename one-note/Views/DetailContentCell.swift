@@ -16,10 +16,11 @@ class DetailContentCell: UITableViewCell {
   override func awakeFromNib() {
     super.awakeFromNib()
     selectionStyle = .none
+    backgroundColor = UIColor.clear
     markLabel.font = UIFont.copperplate(15)
     markLabel.textColor = UIColor.remind
     markLabel.text = "one note"
-    
+    contentTextView.backgroundColor = UIColor.clear
     self.hero.id = HeroID.notesCellContent
   }
   

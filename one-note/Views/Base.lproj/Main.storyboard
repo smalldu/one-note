@@ -215,7 +215,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GdB-Mg-PtD">
-                                <rect key="frame" x="245" y="265.5" width="110" height="45"/>
+                                <rect key="frame" x="245" y="315.5" width="110" height="45"/>
                                 <color key="backgroundColor" red="0.28235294119999998" green="0.28235294119999998" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="Q1u-23-DSo"/>
@@ -228,14 +228,33 @@
                                     <action selector="submit:" destination="kdb-eT-ZRm" eventType="touchUpInside" id="PXw-rh-yWi"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="jQe-El-tBM">
+                                <rect key="frame" x="20" y="235.5" width="169" height="31"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ray-ne-Eek">
+                                        <rect key="frame" x="0.0" y="0.0" width="77" height="31"/>
+                                        <state key="normal" title="  笔记" image="radio_checked">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAw-Jz-FE7">
+                                        <rect key="frame" x="92" y="0.0" width="77" height="31"/>
+                                        <state key="normal" title="  相册" image="radio_unchecked">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Z3W-AN-uNU" firstAttribute="top" secondItem="AjY-5N-ZUq" secondAttribute="top" constant="25" id="0ka-EE-EOc"/>
                             <constraint firstItem="QcP-X9-qUx" firstAttribute="centerY" secondItem="Z3W-AN-uNU" secondAttribute="centerY" id="0lq-7B-6Fj"/>
+                            <constraint firstItem="jQe-El-tBM" firstAttribute="top" secondItem="7hi-xH-GW1" secondAttribute="bottom" constant="20" id="6Vy-d6-t8o"/>
+                            <constraint firstItem="GdB-Mg-PtD" firstAttribute="top" secondItem="7hi-xH-GW1" secondAttribute="bottom" constant="100" id="Ei4-7u-X8b"/>
+                            <constraint firstItem="jQe-El-tBM" firstAttribute="leading" secondItem="AjY-5N-ZUq" secondAttribute="leading" constant="20" id="JH2-SD-HQk"/>
                             <constraint firstItem="AjY-5N-ZUq" firstAttribute="trailing" secondItem="GdB-Mg-PtD" secondAttribute="trailing" constant="20" id="KhL-Rp-eDr"/>
                             <constraint firstItem="7hi-xH-GW1" firstAttribute="leading" secondItem="AjY-5N-ZUq" secondAttribute="leading" constant="20" id="TSu-s9-DJ3"/>
-                            <constraint firstItem="GdB-Mg-PtD" firstAttribute="top" secondItem="7hi-xH-GW1" secondAttribute="bottom" constant="50" id="Vne-i1-qQC"/>
                             <constraint firstItem="7hi-xH-GW1" firstAttribute="top" secondItem="QcP-X9-qUx" secondAttribute="bottom" constant="25" id="Xib-KU-d1o"/>
                             <constraint firstItem="AjY-5N-ZUq" firstAttribute="trailing" secondItem="7hi-xH-GW1" secondAttribute="trailing" constant="20" id="Zav-Ku-gLy"/>
                             <constraint firstItem="AjY-5N-ZUq" firstAttribute="trailing" secondItem="QcP-X9-qUx" secondAttribute="trailing" constant="20" id="c3n-jm-27y"/>
@@ -246,8 +265,11 @@
                     <connections>
                         <outlet property="addButton" destination="QcP-X9-qUx" id="JcF-Vl-ls7"/>
                         <outlet property="fieldView" destination="7hi-xH-GW1" id="mnF-ge-hNM"/>
+                        <outlet property="imageNoteButton" destination="EAw-Jz-FE7" id="uT2-P1-gd7"/>
                         <outlet property="nameField" destination="L51-FL-ijG" id="6oE-GZ-xWJ"/>
+                        <outlet property="noteButton" destination="ray-ne-Eek" id="wih-Af-cF8"/>
                         <outlet property="passwordField" destination="F77-GO-aP3" id="Ty5-hs-OXB"/>
+                        <outlet property="radioView" destination="jQe-El-tBM" id="lDS-tF-nGr"/>
                         <outlet property="submitButton" destination="GdB-Mg-PtD" id="ytJ-nw-3t9"/>
                         <outlet property="titleLabel" destination="Z3W-AN-uNU" id="xFV-ZR-PIC"/>
                     </connections>
@@ -325,5 +347,7 @@
         <image name="lock" width="15" height="20"/>
         <image name="more" width="23" height="7"/>
         <image name="notes" width="25" height="25"/>
+        <image name="radio_checked" width="30" height="29"/>
+        <image name="radio_unchecked" width="31" height="31"/>
     </resources>
 </document>

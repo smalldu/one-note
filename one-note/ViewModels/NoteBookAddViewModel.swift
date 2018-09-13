@@ -11,27 +11,32 @@ import RealmSwift
 
 struct NoteBookAddViewModel {
   
-  private let model = NoteBookModel()
-  private var name: String = ""
-  private var pwd: String = ""
+  private let _model = NoteBookModel()
+  private var _name: String = ""
+  private var _pwd: String = ""
+  private var _type: NoteBook.BookType = .note
+  
+  mutating func typeChanged(_ type: NoteBook.BookType){
+    _type = type
+  }
   
   mutating func nameChange(_ text: String?){
-    name = text ?? ""
+    _name = text ?? ""
   }
   
   mutating func pwdChange(_ text: String?){
-    pwd = (text ?? "").md5
+    _pwd = (text ?? "").md5
   }
   
   func check() -> Bool{
-    if name.isEmpty {
+    if _name.isEmpty {
       return false
     }
     return true
   }
   
   func save() {
-    model.save(name, password: pwd)
+    _model.save(_name, password: _pwd, type: _type)
   }
   
 }

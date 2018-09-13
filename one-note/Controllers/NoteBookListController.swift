@@ -85,8 +85,14 @@ extension NoteBookListController: UICollectionViewDelegateFlowLayout{
       lastCell?.clearHero()
       cell.setHero()
       let noteBook = viewModel.books[indexPath.row]
-      let controller = NoteBookController(noteBook.name)
-      self.present(controller, animated: true, completion: nil)
+      switch noteBook.bookType {
+      case .imageNote:
+        let controller = ImageNoteController(noteBook.name)
+        self.present(controller, animated: true, completion: nil)
+      case .note:
+        let controller = NoteBookController(noteBook.name)
+        self.present(controller, animated: true, completion: nil)
+      }
       lastCell = cell
     }
   }

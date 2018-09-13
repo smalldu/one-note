@@ -68,6 +68,10 @@
 		81F8E1D12147B6BD002D5C4D /* DetailContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81F8E1CF2147B6BD002D5C4D /* DetailContentCell.xib */; };
 		81F8E1D32147C3FE002D5C4D /* UIScrollview+exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8E1D22147C3FE002D5C4D /* UIScrollview+exts.swift */; };
 		81F8E1D5214919C1002D5C4D /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8E1D4214919C1002D5C4D /* NoteViewModel.swift */; };
+		81F8E1D8214A1749002D5C4D /* ImageNoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8E1D6214A1749002D5C4D /* ImageNoteController.swift */; };
+		81F8E1D9214A1749002D5C4D /* ImageNoteController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81F8E1D7214A1749002D5C4D /* ImageNoteController.xib */; };
+		81F8E1DC214A43F1002D5C4D /* AddImageNoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8E1DA214A43F1002D5C4D /* AddImageNoteController.swift */; };
+		81F8E1DD214A43F1002D5C4D /* AddImageNoteController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81F8E1DB214A43F1002D5C4D /* AddImageNoteController.xib */; };
 		A935C7D688326071E34C9623 /* Pods_one_note.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70130C3694D335D528DC8A05 /* Pods_one_note.framework */; };
 /* End PBXBuildFile section */
 
@@ -138,6 +142,10 @@
 		81F8E1CF2147B6BD002D5C4D /* DetailContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailContentCell.xib; sourceTree = "<group>"; };
 		81F8E1D22147C3FE002D5C4D /* UIScrollview+exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollview+exts.swift"; sourceTree = "<group>"; };
 		81F8E1D4214919C1002D5C4D /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
+		81F8E1D6214A1749002D5C4D /* ImageNoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNoteController.swift; sourceTree = "<group>"; };
+		81F8E1D7214A1749002D5C4D /* ImageNoteController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageNoteController.xib; sourceTree = "<group>"; };
+		81F8E1DA214A43F1002D5C4D /* AddImageNoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageNoteController.swift; sourceTree = "<group>"; };
+		81F8E1DB214A43F1002D5C4D /* AddImageNoteController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddImageNoteController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +217,8 @@
 		26D2738D2144D16600F92DC4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				81F8E1DB214A43F1002D5C4D /* AddImageNoteController.xib */,
+				81F8E1D7214A1749002D5C4D /* ImageNoteController.xib */,
 				26D273FF2146AC9700F92DC4 /* NoteDetailController.xib */,
 				26D273CE2145357100F92DC4 /* AddNoteController.xib */,
 				26D273C1214523CB00F92DC4 /* NoteBookController.xib */,
@@ -233,6 +243,8 @@
 				26D273972144E92900F92DC4 /* SettingController.swift */,
 				26D273CD2145357100F92DC4 /* AddNoteController.swift */,
 				26D273FE2146AC9700F92DC4 /* NoteDetailController.swift */,
+				81F8E1D6214A1749002D5C4D /* ImageNoteController.swift */,
+				81F8E1DA214A43F1002D5C4D /* AddImageNoteController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -397,11 +409,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				26D273FB214695AD00F92DC4 /* NoteCell.xib in Resources */,
+				81F8E1DD214A43F1002D5C4D /* AddImageNoteController.xib in Resources */,
 				26D273C3214523CB00F92DC4 /* NoteBookController.xib in Resources */,
 				81F8E1CD2147B69A002D5C4D /* DetailHeadCell.xib in Resources */,
 				26D273842144D13500F92DC4 /* LaunchScreen.storyboard in Resources */,
 				26D273D02145357100F92DC4 /* AddNoteController.xib in Resources */,
 				26D273812144D13500F92DC4 /* Assets.xcassets in Resources */,
+				81F8E1D9214A1749002D5C4D /* ImageNoteController.xib in Resources */,
 				26D2737F2144D13400F92DC4 /* Main.storyboard in Resources */,
 				26D274012146AC9700F92DC4 /* NoteDetailController.xib in Resources */,
 				81F8E1D12147B6BD002D5C4D /* DetailContentCell.xib in Resources */,
@@ -439,6 +453,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-one-note/Pods-one-note-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/EasyAtrribute/EasyAtrribute.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
+				"${BUILT_PRODUCTS_DIR}/ImagePicker/ImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/KMPlaceholderTextView/KMPlaceholderTextView.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
@@ -448,6 +463,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EasyAtrribute.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KMPlaceholderTextView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
@@ -473,6 +489,7 @@
 				26D273CC2145310100F92DC4 /* TableHoderView.swift in Sources */,
 				81F8E1C321466FDE002D5C4D /* UIImage+exts.swift in Sources */,
 				26D273BF214521FD00F92DC4 /* Date+exts.swift in Sources */,
+				81F8E1DC214A43F1002D5C4D /* AddImageNoteController.swift in Sources */,
 				26D273A72144F9B900F92DC4 /* NoteBookListCell.swift in Sources */,
 				26D273B52145108600F92DC4 /* HeroID.swift in Sources */,
 				81F8E1D32147C3FE002D5C4D /* UIScrollview+exts.swift in Sources */,
@@ -514,6 +531,7 @@
 				81F8E1B5214645DC002D5C4D /* CheckButton.swift in Sources */,
 				81F8E1B7214646BC002D5C4D /* CheckView.swift in Sources */,
 				26D273AB2145053B00F92DC4 /* RealmProvider.swift in Sources */,
+				81F8E1D8214A1749002D5C4D /* ImageNoteController.swift in Sources */,
 				26D273B321450A0800F92DC4 /* UICollectionView+exts.swift in Sources */,
 				81F8E1BF214669D9002D5C4D /* AuthorizationManager.swift in Sources */,
 			);
